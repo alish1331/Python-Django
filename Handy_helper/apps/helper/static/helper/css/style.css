@@ -1,0 +1,31 @@
+.navbar {
+    margin-bottom: 50px;
+    border-radius: 0;
+}
+
+.navbar-brand h3 {
+    margin-top: 0;
+}
+
+.box_shadow {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+}
+.message{
+    color: red;
+    padding: 0 5px;
+    font-size: 14px;
+}
+
+.row {
+    padding: 25px;
+}
+
+.form-group row {
+    padding: 0;
+}
+
+.mr-auto {
+    margin-right: auto !important;
+}
