@@ -1,0 +1,32 @@
+.container{
+        position: relative;
+        text-align: center;
+        /* height: auto; */
+    }
+    .frame {
+        border: 1px solid black;
+        padding: 10px;
+        width: 600px;
+        height: auto;
+        margin-top: 20px; 
+        border-radius: 5px;
+        background-color: rgb(163, 222, 135);
+    }
+    .col-md-auto{
+        border: 1px solid black;
+        padding: 10px;
+        width: 400px;
+        height: auto;
+        margin-top: 20px; 
+        border-radius: 5px;
+        background-color: azure;
+    }
+
+    .col-md-auto p{
+        font-weight: bold;
+        color: darkgreen;
+    }
+
+    .row{
+        margin-bottom: 20px;
+    }
