@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Word</title>
+    <style>
+    .output {
+        border: 1px solid black;
+        padding: 15px;
+        width: 300px;
+        height: 50px;
+        font-size: 30px;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <h2>Random Word (attempt # {{ counter }})</h2>
+    <p class="output">{{ new_word }}</p>
+    <form action='/random_word' method="">
+        {% csrf_token %}
+        <button type="submit"> Generate </button>
+    </form>
+    <form action='/clear' method="">
+        {% csrf_token %}
+        <button type="submit"> Reset </button>
+    </form>
+    
+</body>
+
+</html>
