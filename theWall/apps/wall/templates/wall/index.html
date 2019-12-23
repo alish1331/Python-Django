@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <title>Registration & Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <title>Login & Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <div class="container">
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card card-signin flex-row my-5">
+
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Registration</h4>
+
+                        <form class="form-signin" action="/register" method="POST">
+                            <div class="form-label-group">
+                                <label for="inputName">First Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="First Name" required autofocus>
+                            </div>
+
+                            <div class="form-label-group">
+                                <label for="inputLastname">Last Name</label>
+                                <input type="text" name="last_name" class="form-control" placeholder="Last Name" required autofocus>
+                            </div>
+
+                            <div class="form-label-group">
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" name="email" class="form-control" placeholder="Email address" equired>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-label-group">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                            </div>
+
+                            <div class="form-label-group">
+                                <label for="inputConfirmPassword">Confirm password</label>
+                                <input type="password" name="confirm" class="form-control" placeholder="Password" required>
+                            </div>
+
+                            <p></p>
+
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Register">Register</button>
+
+                            {% csrf_token %}
+                        </form>
+                    </div>
+
+                    <!-- Login part starts from here -->
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Login</h4>
+                        <form class="form-signin" action="/login" method="POST">
+                            <div class="form-label-group">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Email address" required>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-label-group">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                            </div>
+                            <p></p>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Login">Sign In</button>
+
+                            {% csrf_token %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+<!-- <body>
+    <div class="container">
+        <h1>Welcome!</h1>
+
+        {%if messages%}
+        {%for message in messages%}
+        <h2>{{message}}</h2>
+        {%endfor%}
+        {%endif%}
+
+        <form action="/register" method="POST">
+            <p>Name: <input type="text" name="name"> </p>
+            <input type="text" name="name" class="form-control" placeholder="First Name" required autofocus>
+            <p>Last Name: <input type="text" name="last_name"> </p>
+            <p>Email: <input type="text" name="email"> </p>
+            <p>Password: <input type="password" name="password"> </p>
+            <p>Password Confirmation: <input type="password" name="confirm"> </p>
+            {%csrf_token%}
+            <input type="submit" value="Register">
+        </form>
+
+        <form action="/login" method="POST">
+            <p>Email: <input type="text" name="email"> </p>
+            <p>Password: <input type="password" name="password"> </p>
+            {%csrf_token%}
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+
+</html> -->

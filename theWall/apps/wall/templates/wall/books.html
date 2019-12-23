@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <title>Book</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/books.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- <p>Welcome, {{User.name}} </p>  -->
+    <!-- {%for User in user%} -->
+    <!-- <h1>Welcome, {{ name }} </h1> -->
+    <!-- {% endfor %} -->
+    <a href="/books/add">Add Book and Review</a>
+    <div><a href="/">Logout</a></div>
+
+
+    <!-- {% for book in books.objects.all %}
+    <li>{{book.book}}</li>
+    {% endfor %} -->
+
+    <h2>Recent Book Reviews:</h2>
+    <div class="reviews">
+        <div>
+            <!-- {%for review in reviews%}
+            <p>Book title: <a href="/books/{{ review.book_id }}"> {{ review.book.title }}</a></p>
+            <p>Rating:{{ review.rating }}/5 </p>
+            <div>
+                <p><a href="/users/{{ review.user_id }}">{{ review.user.name }}</a> says: {{ review.text }}</p>
+                <p class="date">{{ review.createdAt }}</p>
+                {%endfor%} -->
+            </div>
+        </div>
+
+    </div>
+    <div class="reviews">
+        <!-- {%for review in otherReviews%}
+        <p><a href="/books/{{ review.book_id }}"> {{ review.book.title }} </a></p>
+        {%endfor%} -->
+    </div>
+</body>
+
+</html>
